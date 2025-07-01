@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "EQ_Contexts/EQC_FindAllyBots.h"
@@ -46,7 +46,7 @@ void UEQC_FindAllyBots::ProvideContext(FEnvQueryInstance& QueryInstance, FEnvQue
 					//Only include valid bots in our final contexts;
 					//We want to exclude the actor that performs the query plus any duplicate actors
 					if (HitActor && HitActor!=OwnerActor && 
-						OwnerActor->SameTeam(*HitActor) && !AlreadyTracedActor(AllyBots,*HitActor))
+						OwnerActor->SameTeam(HitActor) && !AlreadyTracedActor(AllyBots,*HitActor))
 					{
 						AllyBots.Add(HitActor);
 					}
